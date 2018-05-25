@@ -1,2 +1,0 @@
-tomorrow==0.2.4
-requests==2.8.1
