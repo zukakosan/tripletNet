@@ -1,4 +1,4 @@
-## triplet-lossを利用したcross-domain clothes-image retrieval 
+## Cross-domain image retrieval on fashion with designed triplet loss
 現在の構造
 ![tripletNet](./tripletNet.png)
 
