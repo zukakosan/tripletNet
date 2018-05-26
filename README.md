@@ -1,4 +1,8 @@
- # 修論の進め方
+## triplet-lossを利用したcross-domain clothes-image retrieval 
+現在の構造
+![tripletNet](./tripletNet.png)
+
+## dataset
  DeepFashionのデータセットを利用して、3つのうちどれかのタスクに取り組む。
  (http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
  - カテゴリ、属性推定
