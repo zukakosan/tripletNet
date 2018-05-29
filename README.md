@@ -3,16 +3,11 @@
 ![tripletNet](./tripletNet.png)
 
 ## dataset
- DeepFashionのデータセットを利用して、3つのうちどれかのタスクに取り組む。
+By using the Dataset of DeepFashion, I address one of the three tasks.
  (http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
- - カテゴリ、属性推定
- - 同じアイテムについての複数の画像を見て、同じアイテムだと認識できるか。
-    - 精度評価はtop-k
- - ストリートスナップとonlineの画像を一致させる。
-    - 精度評価はtop-k
-    
-    
-まずは、データ提供者が提案しているモデルであるFashionNetを利用してみる。
+Calculate accuracy by top-K score of retrievals.   
+
+First, I'll try to use the FashionNet which is suggested by the provider of the Dataset.
 （https://ieeexplore.ieee.org/document/7780493/）
 > **2.3. Benchmarks**<br>
 We build the following benchmarks out of DeepFashion for evaluating different methods.
