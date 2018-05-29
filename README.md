@@ -1,5 +1,5 @@
 ## Cross-domain image retrieval on fashion with designed triplet loss
-現在の構造
+### Current Structure of Network
 ![tripletNet](./tripletNet.png)
 
 ## dataset
