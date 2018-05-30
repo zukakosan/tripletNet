@@ -1,0 +1,336 @@
+backend: tensorflow
+class_name: Model
+config:
+  input_layers:
+  - [anchor_input, 0, 0]
+  - [positive_input, 0, 0]
+  - [input_2, 0, 0]
+  layers:
+  - class_name: InputLayer
+    config:
+      batch_input_shape: !!python/tuple [null, 128, 128, 3]
+      dtype: float32
+      name: anchor_input
+      sparse: false
+    inbound_nodes: []
+    name: anchor_input
+  - class_name: InputLayer
+    config:
+      batch_input_shape: !!python/tuple [null, 128, 128, 3]
+      dtype: float32
+      name: positive_input
+      sparse: false
+    inbound_nodes: []
+    name: positive_input
+  - class_name: InputLayer
+    config:
+      batch_input_shape: !!python/tuple [null, 128, 128, 3]
+      dtype: float32
+      name: input_2
+      sparse: false
+    inbound_nodes: []
+    name: input_2
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: &id002 !!python/tuple [1, 1]
+      filters: 64
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+      kernel_regularizer: null
+      kernel_size: !!python/tuple [4, 4]
+      name: conv2d_5
+      padding: same
+      strides: &id003 !!python/tuple [1, 1]
+      trainable: true
+      use_bias: true
+    inbound_nodes:
+    - - - anchor_input
+        - 0
+        - 0
+        - {}
+    - - - positive_input
+        - 0
+        - 0
+        - {}
+    - - - input_2
+        - 0
+        - 0
+        - {}
+    name: conv2d_5
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      name: max_pooling2d_5
+      padding: valid
+      pool_size: &id001 !!python/tuple [2, 2]
+      strides: *id001
+      trainable: true
+    inbound_nodes:
+    - - - conv2d_5
+        - 0
+        - 0
+        - {}
+    - - - conv2d_5
+        - 1
+        - 0
+        - {}
+    - - - conv2d_5
+        - 2
+        - 0
+        - {}
+    name: max_pooling2d_5
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: *id002
+      filters: 32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+      kernel_regularizer: null
+      kernel_size: !!python/tuple [4, 4]
+      name: conv2d_6
+      padding: same
+      strides: *id003
+      trainable: true
+      use_bias: true
+    inbound_nodes:
+    - - - max_pooling2d_5
+        - 0
+        - 0
+        - {}
+    name: conv2d_6
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: *id002
+      filters: 32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+      kernel_regularizer: null
+      kernel_size: !!python/tuple [4, 4]
+      name: conv2d_7
+      padding: same
+      strides: *id003
+      trainable: true
+      use_bias: true
+    inbound_nodes:
+    - - - max_pooling2d_5
+        - 1
+        - 0
+        - {}
+    name: conv2d_7
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_last
+      dilation_rate: *id002
+      filters: 32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+      kernel_regularizer: null
+      kernel_size: !!python/tuple [4, 4]
+      name: conv2d_8
+      padding: same
+      strides: *id003
+      trainable: true
+      use_bias: true
+    inbound_nodes:
+    - - - max_pooling2d_5
+        - 2
+        - 0
+        - {}
+    name: conv2d_8
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      name: max_pooling2d_6
+      padding: valid
+      pool_size: &id004 !!python/tuple [2, 2]
+      strides: *id004
+      trainable: true
+    inbound_nodes:
+    - - - conv2d_6
+        - 0
+        - 0
+        - {}
+    name: max_pooling2d_6
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      name: max_pooling2d_7
+      padding: valid
+      pool_size: &id005 !!python/tuple [2, 2]
+      strides: *id005
+      trainable: true
+    inbound_nodes:
+    - - - conv2d_7
+        - 0
+        - 0
+        - {}
+    name: max_pooling2d_7
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_last
+      name: max_pooling2d_8
+      padding: valid
+      pool_size: &id006 !!python/tuple [2, 2]
+      strides: *id006
+      trainable: true
+    inbound_nodes:
+    - - - conv2d_8
+        - 0
+        - 0
+        - {}
+    name: max_pooling2d_8
+  - class_name: Dense
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+      kernel_regularizer: null
+      name: dense_4
+      trainable: true
+      units: 20
+      use_bias: true
+    inbound_nodes:
+    - - - max_pooling2d_6
+        - 0
+        - 0
+        - {}
+    name: dense_4
+  - class_name: Dense
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+      kernel_regularizer: null
+      name: dense_5
+      trainable: true
+      units: 20
+      use_bias: true
+    inbound_nodes:
+    - - - max_pooling2d_7
+        - 0
+        - 0
+        - {}
+    name: dense_5
+  - class_name: Dense
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
+      kernel_regularizer: null
+      name: dense_6
+      trainable: true
+      units: 20
+      use_bias: true
+    inbound_nodes:
+    - - - max_pooling2d_8
+        - 0
+        - 0
+        - {}
+    name: dense_6
+  - class_name: Flatten
+    config: {data_format: channels_last, name: anchor_output, trainable: true}
+    inbound_nodes:
+    - - - dense_4
+        - 0
+        - 0
+        - {}
+    name: anchor_output
+  - class_name: Flatten
+    config: {data_format: channels_last, name: positive_output, trainable: true}
+    inbound_nodes:
+    - - - dense_5
+        - 0
+        - 0
+        - {}
+    name: positive_output
+  - class_name: Flatten
+    config: {data_format: channels_last, name: negative_output, trainable: true}
+    inbound_nodes:
+    - - - dense_6
+        - 0
+        - 0
+        - {}
+    name: negative_output
+  - class_name: TripletLossLayer
+    config: {name: triplet_loss_layer, trainable: true}
+    inbound_nodes:
+    - - - anchor_output
+        - 0
+        - 0
+        - &id007 {}
+      - - positive_output
+        - 0
+        - 0
+        - *id007
+      - - negative_output
+        - 0
+        - 0
+        - *id007
+    name: triplet_loss_layer
+  name: model_2
+  output_layers:
+  - [triplet_loss_layer, 0, 0]
+keras_version: 2.1.6
