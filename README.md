@@ -1,6 +1,6 @@
 ## Cross-domain image retrieval on fashion with designed triplet loss
 ### Current Structure of Network
-![tripletNet](./tripletNet.png)
+![tripletNet](./tripletNetWithSequential.png)
 
 ## dataset
 By using the Dataset of DeepFashion, I address one of the three tasks.
