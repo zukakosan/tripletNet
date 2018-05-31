@@ -1,6 +1,7 @@
 .ipynb_checkpoints
 data/
+model/
 __MACOSX/images/
-img
-nogi_imgs
+img/
+nogi_imgs/
 __pycache__
