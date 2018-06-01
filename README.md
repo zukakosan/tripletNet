@@ -3,7 +3,17 @@
 ![tripletNet](./sup/tripletNetWithSequential.png)
 #### Partial Network 'embNet'
 ![embNet](./sup/embNet.png) 
+## Implementation
+These notebooks are implemented by keras = 3.5 or 3.6.
 
+## Usage
+Before execute jupyter notebook, we need some work. 
+```
+$ mkdir model
+$ brew install graphviz
+# or apt-get install graphviz
+$ pip install pydot
+```
 ## dataset
 By using the Dataset of DeepFashion, I address one of the three tasks.
  (http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
