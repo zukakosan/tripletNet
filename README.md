@@ -4,7 +4,7 @@
 #### Partial Network 'embNet'
 ![embNet](./sup/embNet.png) 
 ## Implementation
-These notebooks are implemented by keras = 3.5 or 3.6.
+These notebooks are implemented by python = 3.5 or 3.6 with keras = 2.1.1 . 
 
 ## Usage
 Before execute jupyter notebook, we need some work. 
