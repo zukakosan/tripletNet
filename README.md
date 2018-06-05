@@ -14,7 +14,15 @@ $ brew install graphviz
 # or apt-get install graphviz
 $ pip install pydot
 ```
-## dataset
+## Experiment
+#### Query
+![query](./nogi_result/query.png)
+#### Nearest
+![nearest](./nogi_result/nearest.png)
+#### Distance
+![distance](./nogi_result/retrieval.png)
+
+## Dataset
 By using the Dataset of DeepFashion, I address one of the three tasks.
  (http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
 Calculate accuracy by top-K score of retrievals.   
