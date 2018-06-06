@@ -1,6 +1,7 @@
 .ipynb_checkpoints
 data/
 model/
+mnist_model/
 __MACOSX/images/
 img/
 nogi_imgs/
