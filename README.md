@@ -15,6 +15,7 @@ $ brew install graphviz
 $ pip install pydot
 ```
 ## Experiment
+### Nogizaka46
 #### Query
 ![query](./nogi_result/query.png)
 #### Nearest
@@ -22,6 +23,8 @@ $ pip install pydot
 #### Distance
 ![distance](./nogi_result/retrieval.png)
 
+### mnist
+![mnistemb](./sup/mnist_scatter.png)
 ## Dataset
 By using the Dataset of DeepFashion, I address one of the three tasks.
  (http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
