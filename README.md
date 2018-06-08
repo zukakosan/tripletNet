@@ -25,6 +25,8 @@ $ pip install pydot
 
 ### mnist
 ![mnistemb](./sup/mnist_scatter.png)
+![pcaplot](./sup/PCA_plot.png)
+
 ## Dataset
 By using the Dataset of DeepFashion, I address one of the three tasks.
  (http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
